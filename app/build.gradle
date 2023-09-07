@@ -37,6 +37,13 @@ application {
     mainClass = 'com.rockmanjoe.algorithms.App'
 }
 
+test {
+    testLogging {
+        outputs.upToDateWhen {false}
+        showStandardStreams = true
+    }
+}
+
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
