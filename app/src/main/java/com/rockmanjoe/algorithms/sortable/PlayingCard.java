@@ -20,8 +20,15 @@ public class PlayingCard implements Comparable<PlayingCard> {
     }
 
     @Override
+    public String toString() {
+        return this.rank + " of " + this.suit;
+    }
+
+    @Override
     public int compareTo(PlayingCard playingCard) {
-        return this.rank.compareTo(playingCard.rank);
+        var bySuit = this.suit.compareTo(playingCard.suit);
+        return bySuit == 0 ?
+                this.rank.compareTo(playingCard.rank) : bySuit;
     }
 
     public static enum Suit {

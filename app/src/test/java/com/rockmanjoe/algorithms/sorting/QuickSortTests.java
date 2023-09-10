@@ -22,6 +22,8 @@ public class QuickSortTests {
         Collections.shuffle(list);
         var array = list.toArray(new PlayingCard[0]);
 
+        System.out.println("Deck before sorting:" + Arrays.toString(array));
+
         // Act
         var quickSort = new QuickSort();
         quickSort.sort(array);
@@ -29,6 +31,6 @@ public class QuickSortTests {
         // Assert
         var dataValidator = new DataValidator();
         assertTrue(dataValidator.areSorted(array),
-                "Array is not sorted: " + Arrays.toString(array));
+                "Deck is not sorted: " + Arrays.toString(array));
     }
 }
