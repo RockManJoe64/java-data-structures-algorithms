@@ -20,9 +20,10 @@ public class QuickSortTests {
         var deck = new Deck();
         var list = deck.getCardsList();
         Collections.shuffle(list);
-        var array = list.toArray(new PlayingCard[0]);
+        var array = deck.getCards();
 
-        System.out.println("Deck before sorting:" + Arrays.toString(array));
+        System.out.println("Deck before sorting:");
+        deck.printDeck();
 
         // Act
         var quickSort = new QuickSort();
@@ -32,5 +33,8 @@ public class QuickSortTests {
         var dataValidator = new DataValidator();
         assertTrue(dataValidator.areSorted(array),
                 "Deck is not sorted: " + Arrays.toString(array));
+
+        System.out.println("Deck after sorting:");
+        deck.printDeck();
     }
 }

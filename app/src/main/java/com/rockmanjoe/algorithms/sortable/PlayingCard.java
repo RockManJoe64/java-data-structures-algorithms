@@ -31,11 +31,11 @@ public class PlayingCard implements Comparable<PlayingCard> {
                 this.rank.compareTo(playingCard.rank) : bySuit;
     }
 
-    public static enum Suit {
+    public enum Suit {
         CLUBS, DIAMONDS, HEARTS, SPADES
     }
 
-    public static enum Rank {
+    public enum Rank {
         ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
     }
 }

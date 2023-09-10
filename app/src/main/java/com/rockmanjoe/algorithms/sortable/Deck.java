@@ -23,4 +23,13 @@ public class Deck {
     public List<PlayingCard> getCardsList() {
         return Arrays.asList(cards);
     }
+
+    public void printDeck() {
+        for(int i = 0; i < cards.length; i++) {
+            if (i % 4 == 0)
+                System.out.println();
+            System.out.print(cards[i] + ", ");
+        }
+        System.out.println();
+    }
 }
