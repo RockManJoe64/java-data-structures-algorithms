@@ -1,11 +1,11 @@
 package com.rockmanjoe.algorithms.sorting;
 
 public class QuickSort {
-    public static void sort(int[] array) {
+    public <T extends Comparable<T>> void sort(T[] array) {
         quickSort(array, 0, array.length - 1);
     }
 
-    private static void quickSort(int[] array, int low, int high) {
+    private <T extends Comparable<T>> void quickSort(T[] array, int low, int high) {
         if (low < high) {
             var pivot = partition(array, low, high);
             quickSort(array, low, pivot - 1);
@@ -13,11 +13,11 @@ public class QuickSort {
         }
     }
 
-    private static int partition(int[] array, int low, int high) {
+    private <T extends Comparable<T>> int partition(T[] array, int low, int high) {
         var pivot = array[high]; // Selecting the last element as the pivot
         var i = low - 1; // Index of smaller element; indicates the right position of pivot
         for (var j = low; j < high; j++) {
-            if (array[j] < pivot) { // If current element is smaller than the pivot
+            if (array[j].compareTo(pivot) < 0) { // If current element is smaller than the pivot
                 i++;
                 swap(array, i, j);
             }
@@ -26,7 +26,7 @@ public class QuickSort {
         return i + 1;
     }
 
-    private static void swap(int[] array, int a, int b) {
+    private <T extends Comparable<T>> void swap(T[] array, int a, int b) {
         var temp = array[a];
         array[a] = array[b];
         array[b] = temp;
