@@ -5,11 +5,6 @@ public class QuickSort {
         quickSort(array, 0, array.length - 1);
     }
 
-    public static void main(String[] args) {
-        var array = new int[]{7, 2, 1, 6, 8, 5, 3, 4};
-        QuickSort.sort(array);
-    }
-
     private static void quickSort(int[] array, int low, int high) {
         if (low < high) {
             var pivot = partition(array, low, high);

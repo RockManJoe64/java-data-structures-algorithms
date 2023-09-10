@@ -22,7 +22,7 @@ public final class DataGenerator {
     }
 
     public static int[] generateShuffledArray(int size) {
-        var shuffledList = Arrays.stream((DataGenerator.generateSortedArray(100)))
+        var shuffledList = Arrays.stream((DataGenerator.generateSortedArray(size)))
                 .boxed()
                 .toList();
         shuffledList = new LinkedList<>(shuffledList);
