@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class QuickSortTests {
+public class MergeSortTests {
     private final NumberFormat numberFormat = NumberFormat.getInstance();
 
     @Test
@@ -24,7 +24,7 @@ public class QuickSortTests {
         var array = new int[]{7, 2, 1, 6, 8, 5, 3, 4};
 
         // Act
-        QuickSort.sort(array);
+        MergeSort.sort(array);
 
         // Assert
         assertTrue(DataValidator.isSorted(array),
@@ -39,11 +39,11 @@ public class QuickSortTests {
         // Act
         var start = Instant.now();
 
-        QuickSort.sort(array);
+        MergeSort.sort(array);
 
         var end = Instant.now();
         var duration = Duration.between(start, end).toNanos();
-        System.out.println("QuickSort took " + numberFormat.format(duration) + " nanoseconds");
+        System.out.println("MergeSort took " + numberFormat.format(duration) + " nanoseconds");
 
         // Assert
         assertTrue(DataValidator.isSorted(array),
@@ -66,11 +66,11 @@ public class QuickSortTests {
         // Act
         var start = Instant.now();
 
-        QuickSort.sort(array);
+        MergeSort.sort(array);
 
         var end = Instant.now();
         var duration = Duration.between(start, end).toNanos();
-        System.out.println("QuickSort took " + numberFormat.format(duration) + " nanoseconds");
+        System.out.println("MergeSort took " + numberFormat.format(duration) + " nanoseconds");
 
         // Assert
         assertTrue(DataValidator.isSorted(array),
