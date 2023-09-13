@@ -19,7 +19,7 @@ public class MergeSortTests {
     private final NumberFormat numberFormat = NumberFormat.getInstance();
 
     @Test
-    public void givenExampleArray_whenQuickSort_shouldSort() {
+    public void givenExampleArray_whenMergeSort_shouldSort() {
         // Arrange
         var array = new int[]{7, 2, 1, 6, 8, 5, 3, 4};
 
@@ -33,7 +33,7 @@ public class MergeSortTests {
 
     @ParameterizedTest
     @MethodSource("provideRandomNumberArrays")
-    public void givenRandomArrayOfInts_whenQuickSort_shouldSort(int[] array) {
+    public void givenRandomArrayOfInts_whenMergeSort_shouldSort(int[] array) {
         System.out.println("Array size: " + numberFormat.format(array.length));
 
         // Act
@@ -60,7 +60,7 @@ public class MergeSortTests {
 
     @ParameterizedTest
     @MethodSource("provideShuffledNumberArrays")
-    public void givenShuffledArrayOfInts_whenQuickSort_shouldSort(int[] array) {
+    public void givenShuffledArrayOfInts_whenMergeSort_shouldSort(int[] array) {
         System.out.println("Array size: " + numberFormat.format(array.length));
 
         // Act
