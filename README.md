@@ -20,3 +20,10 @@ An example implementation of various data structures and algorithms.
 - [Merge Sort](app/src/main/java/com/rockmanjoe/algorithms/sorting/MergeSort.java)
 - [Tests](app/src/test/java/com/rockmanjoe/algorithms/sorting/MergeSortTests.java)
 - [Reference](https://www.wikipedia.org/wiki/Merge_sort)
+
+#### Heap Sort
+
+- Average/Worst Time Complexity: `O(n log n)`
+- [Heap Sort](app/src/main/java/com/rockmanjoe/algorithms/sorting/HeapSort.java)
+- [Tests](app/src/test/java/com/rockmanjoe/algorithms/sorting/HeapSortTests.java)
+- [Reference](https://www.programiz.com/dsa/heap-sort)
