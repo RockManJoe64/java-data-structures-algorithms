@@ -19,16 +19,10 @@ public class QuickSort {
         for (var j = low; j < high; j++) {
             if (array[j] < pivot) { // If current element is smaller than the pivot
                 i++;
-                swap(array, i, j);
+                Swapping.swap(array, i, j);
             }
         }
-        swap(array, i + 1, high); // Swap the pivot with the element at the right position (i + 1)
+        Swapping.swap(array, i + 1, high); // Swap the pivot with the element at the right position (i + 1)
         return i + 1;
-    }
-
-    private static void swap(int[] array, int a, int b) {
-        var temp = array[a];
-        array[a] = array[b];
-        array[b] = temp;
     }
 }

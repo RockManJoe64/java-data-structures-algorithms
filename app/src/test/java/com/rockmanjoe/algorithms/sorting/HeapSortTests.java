@@ -15,16 +15,16 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MergeSortTests {
+public class HeapSortTests {
     private final NumberFormat numberFormat = NumberFormat.getInstance();
-
+    
     @Test
-    public void givenExampleArray_whenMergeSort_shouldSort() {
+    public void givenExampleArray_whenHeapSort_shouldSort() {
         // Arrange
-        var array = new int[]{7, 2, 1, 6, 8, 5, 3, 4};
+        var array = new int[]{1, 12, 9, 5, 6, 10};
 
         // Act
-        MergeSort.sort(array);
+        HeapSort.sort(array);
 
         // Assert
         assertTrue(DataValidator.isSorted(array),
@@ -33,17 +33,17 @@ public class MergeSortTests {
 
     @ParameterizedTest
     @MethodSource("provideRandomNumberArrays")
-    public void givenRandomArrayOfInts_whenMergeSort_shouldSort(int[] array) {
+    public void givenRandomArrayOfInts_whenHeapSort_shouldSort(int[] array) {
         System.out.println("Array size: " + numberFormat.format(array.length));
 
         // Act
         var start = Instant.now();
 
-        MergeSort.sort(array);
+        HeapSort.sort(array);
 
         var end = Instant.now();
         var duration = Duration.between(start, end).toNanos();
-        System.out.println("MergeSort took " + numberFormat.format(duration) + " nanoseconds");
+        System.out.println("HeapSort took " + numberFormat.format(duration) + " nanoseconds");
 
         // Assert
         assertTrue(DataValidator.isSorted(array),
@@ -60,17 +60,17 @@ public class MergeSortTests {
 
     @ParameterizedTest
     @MethodSource("provideShuffledNumberArrays")
-    public void givenShuffledArrayOfInts_whenMergeSort_shouldSort(int[] array) {
+    public void givenShuffledArrayOfInts_whenHeapSort_shouldSort(int[] array) {
         System.out.println("Array size: " + numberFormat.format(array.length));
 
         // Act
         var start = Instant.now();
 
-        MergeSort.sort(array);
+        HeapSort.sort(array);
 
         var end = Instant.now();
         var duration = Duration.between(start, end).toNanos();
-        System.out.println("MergeSort took " + numberFormat.format(duration) + " nanoseconds");
+        System.out.println("HeapSort took " + numberFormat.format(duration) + " nanoseconds");
 
         // Assert
         assertTrue(DataValidator.isSorted(array),
