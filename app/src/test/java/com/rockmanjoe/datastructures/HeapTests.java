@@ -35,16 +35,31 @@ public class HeapTests {
     }
 
     @Test
-    public void givenArray_whenDeleteMax_shouldHeapify() {
+    public void givenArray_whenDelete_shouldHeapify() throws HeapException {
         // Arrange
         var array = new int[]{1, 12, 9, 5, 6, 10};
         var heap = new Heap(array);
         heap.heapify();
 
         // Act
-        heap.deleteMax();
+        heap.delete(12);
 
         // Assert
+        assertThat(heap.getMax()).isEqualTo(10);
+    }
+
+    @Test
+    public void givenArray_whenDeleteMax_shouldHeapify() throws HeapException {
+        // Arrange
+        var array = new int[]{1, 12, 9, 5, 6, 10};
+        var heap = new Heap(array);
+        heap.heapify();
+
+        // Act
+        var value = heap.deleteMax();
+
+        // Assert
+        assertThat(value).isEqualTo(12);
         assertThat(heap.getMax()).isEqualTo(10);
     }
 }

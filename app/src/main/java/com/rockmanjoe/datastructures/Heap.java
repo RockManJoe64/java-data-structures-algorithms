@@ -71,9 +71,8 @@ public class Heap {
             }
         }
 
-        // Value not found so do nothing
         if (index == -1) {
-            return;
+            return; // Value not found so do nothing
         }
 
         // Swap the value to delete with the last element, then remove the last element
@@ -86,15 +85,15 @@ public class Heap {
         return heap.get(0);
     }
 
-    public void deleteMax() {
+    public int deleteMax() throws HeapException {
         int n = heap.size();
-        if (n == 0) {
-            return;
-        }
+        if (n == 0) throw new HeapException("Heap is empty");
 
         Collections.swap(heap, 0, n - 1);
-        heap.remove(n - 1);
+        var value = heap.remove(n - 1);
         heapify(0);
+
+        return value;
     }
 
     public String toString() {
@@ -105,16 +104,12 @@ public class Heap {
         var index = 0;
         for (var i = 0; i < height; i++) {
             var padding = (int) Math.pow(2, height - i - 1);
-            for (var j = 0; j < padding; j++) {
-                builder.append(" ");
-            }
+            builder.append(" ".repeat(Math.max(0, padding)));
             for (var j = 0; j < Math.pow(2, i); j++) {
                 if (index < n) {
                     builder.append(heap.get(index++));
                 }
-                for (var k = 0; k < padding * 2 - 1; k++) {
-                    builder.append(" ");
-                }
+                builder.append(" ".repeat(Math.max(0, padding * 2 - 1)));
             }
             builder.append("\n");
         }
